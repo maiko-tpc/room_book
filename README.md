@@ -66,8 +66,7 @@ data/setup.lock
 ### 1. リポジトリを取得する
 
 ```bash
-git clone https://github.com/USERNAME/meeting-room-reservation.git
-cd meeting-room-reservation
+git clone https://github.com/maiko-tpc/room_book
 ```
 
 ZIPで取得した場合は、展開したディレクトリへ移動してください。
