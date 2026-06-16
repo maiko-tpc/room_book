@@ -1,0 +1,15 @@
+.htaccess
+data/*
+!data/.htaccess
+!data/.gitkeep
+
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+*.log
+*.bak
+*.tmp
+*.orig
