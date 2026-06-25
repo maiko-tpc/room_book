@@ -7,7 +7,7 @@
 /*
  * システム名
  */
-define('APP_NAME', '会議室予約');
+define('APP_NAME', 'テスト会議室予約');
 
 /*
  * タイムゾーン
@@ -45,6 +45,21 @@ $rooms = [
         'id' => 'seminar_room',
         'name' => 'セミナー室',
         'description' => '研究棟1階',
+    ],
+    [
+        'id' => 'kaigi_room1',
+        'name' => '講義室1',
+        'description' => '研究棟2階',
+    ],
+    [
+        'id' => 'kaigi_room2',
+        'name' => '講義室2',
+        'description' => '研究棟4階',
+    ],
+    [
+        'id' => 'kaigi_room3',
+        'name' => '講義室3',
+        'description' => '講義棟4階',
     ],
 ];
 
