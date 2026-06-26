@@ -521,7 +521,8 @@ if (
 
         .week-table-wrap {
             overflow-x: auto;
-            padding-bottom: 4px;
+            overflow-y: visible;
+            padding-bottom: 220px;
         }
 
         .week-table {
