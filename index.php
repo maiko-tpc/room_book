@@ -763,6 +763,11 @@ if (
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
         }
 
+        .week-cell-sunday .week-cell-popup {
+            right: 8px;
+            left: auto;
+        }
+
         .week-cell:hover .week-cell-popup,
         .week-cell:focus-within .week-cell-popup {
             display: block;
@@ -1459,6 +1464,13 @@ if (
                                 echo $isSelectedDay
                                     ? 'selected-day'
                                     : '';
+
+                                if (
+                                    (int) $dayObject->format('w')
+                                    === 0
+                                ) {
+                                    echo ' week-cell-sunday';
+                                }
                                 ?>"
                                 tabindex="0"
                                 data-href="<?php
