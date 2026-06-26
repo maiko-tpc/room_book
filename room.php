@@ -67,9 +67,6 @@ if ($room === null) {
 
 /*
  * 編集モード
- *
- * room.php?room_id=...&edit=1
- * の場合だけ編集フォームを表示します。
  */
 $isEditMode =
     isset($_GET['edit'])
@@ -180,9 +177,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $note =
         trim($_POST['note'] ?? '');
 
-    /*
-     * 入力チェック
-     */
     if (!is_valid_capacity($capacity)) {
         $errorMessages[] =
             '定員は1以上10000以下の整数で入力してください。';
@@ -210,9 +204,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $now =
                 date('Y-m-d H:i:s');
 
-            /*
-             * 会議室情報を新規登録または更新
-             */
             $stmt = $db->prepare(
                 '
                 INSERT INTO room_details (
@@ -316,10 +307,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $stmt->execute();
 
-            /*
-             * 二重送信を防ぎ、
-             * 保存後は詳細表示へ戻る
-             */
             header(
                 'Location: room.php?room_id='
                 . rawurlencode($roomId)
@@ -486,9 +473,11 @@ $saved =
             border-bottom: none;
         }
 
-        .pre-wrap {
+        .multiline-text {
+            margin: 0;
             white-space: pre-wrap;
             overflow-wrap: anywhere;
+            text-align: left;
         }
 
         .empty-value {
@@ -736,36 +725,12 @@ $saved =
 
                 <tr>
                     <th>その他の設備</th>
-                    <td class="pre-wrap">
-                        <?php if ($equipment !== ''): ?>
-
-                            <?php echo h($equipment); ?>
-
-                        <?php else: ?>
-
-                            <span class="empty-value">
-                                未登録
-                            </span>
-
-                        <?php endif; ?>
-                    </td>
+                    <td><?php if ($equipment !== ''): ?><div class="multiline-text"><?php echo h($equipment); ?></div><?php else: ?><span class="empty-value">未登録</span><?php endif; ?></td>
                 </tr>
 
                 <tr>
                     <th>注意事項</th>
-                    <td class="pre-wrap">
-                        <?php if ($note !== ''): ?>
-
-                            <?php echo h($note); ?>
-
-                        <?php else: ?>
-
-                            <span class="empty-value">
-                                未登録
-                            </span>
-
-                        <?php endif; ?>
-                    </td>
+                    <td><?php if ($note !== ''): ?><div class="multiline-text"><?php echo h($note); ?></div><?php else: ?><span class="empty-value">未登録</span><?php endif; ?></td>
                 </tr>
 
                 </tbody>

@@ -683,6 +683,7 @@ if (
             line-height: 1.45;
             white-space: pre-wrap;
             overflow-wrap: anywhere;
+            text-align: left;
         }
 
         .week-room-info-link {
@@ -1407,9 +1408,7 @@ if (
                                     <?php endif; ?>
 
                                     <?php if ($noteText !== ''): ?>
-                                        <div class="week-room-info-note">
-                                            <?php echo h($noteText); ?>
-                                        </div>
+                                        <div class="week-room-info-note"><span class="week-room-info-label">注意事項：</span> <?php echo h($noteText); ?></div>
                                     <?php endif; ?>
 
                                     <?php if (!$hasAnyRoomInfo): ?>
