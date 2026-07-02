@@ -704,7 +704,7 @@ if (
 
         .week-cell {
             position: relative;
-            height: 82px;
+            height: 96px;
             padding: 0;
             vertical-align: top;
             background: #ffffff;
@@ -721,7 +721,7 @@ if (
 
         .week-cell-inner {
             height: 100%;
-            padding: 8px;
+            padding: 7px 8px;
         }
 
         .week-cell-count {
@@ -1500,7 +1500,7 @@ if (
                                             array_slice(
                                                 $cellReservations,
                                                 0,
-                                                2
+                                                3
                                             );
                                         ?>
 
